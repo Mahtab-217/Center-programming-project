@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text("description");
             $table->string("banner_url");
             $table->foreignId("teacher_id")->constrained("teachers", "id");
-
             $table->timestamps();
         });
     }

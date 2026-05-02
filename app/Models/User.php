@@ -50,6 +50,18 @@ class User extends Authenticatable // implements MustVerifyEmail
     /**
      * Get the user's initials
      */
+    public function student(){
+        return $this->hasOne(student::class);
+    }
+
+    public function admin(){
+    return $this->hasOne(Admin::class);
+    }
+
+    
+
+
+
     public function initials(): string
     {
         return Str::of($this->name)

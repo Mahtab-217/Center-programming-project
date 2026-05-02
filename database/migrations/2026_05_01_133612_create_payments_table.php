@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer("amount");
             $table->foreignId("student_id")->constrained("students", "id");
             $table->foreignId("sinf_id")->constrained("sinfs", "id");
-
             $table->timestamps();
         });
     }

@@ -12,4 +12,11 @@ class Payment extends Model
         "student_id",
         "sinf_id",
     ];
+
+    public function student(){
+        return $this->belongsTo(student::class);
+    }
+    public function sinf(){
+        return $this->belongsTo(Sinf::class);
+    }
 }

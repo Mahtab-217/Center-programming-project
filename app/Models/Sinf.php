@@ -15,4 +15,11 @@ class Sinf extends Model
         "banner_url",
         "teacher_id",
     ];
+    public function payment(){
+        return $this->hasMany(Payment::class);
+    }
+
+    public function teacher(){
+        return $this->belongsTo(teacher::class);
+    }
 }

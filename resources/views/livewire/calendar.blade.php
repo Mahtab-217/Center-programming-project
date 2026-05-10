@@ -1,5 +1,6 @@
 <div>
-    {{-- <flux:calendar wire:model="date" /> --}}
-    <livewire:calendar />
+    <flux:button variant="primary">Save</flux:button>
+    
+    {{-- <livewire:calendar /> --}}
     {{-- In work, do what you enjoy. --}}
 </div>

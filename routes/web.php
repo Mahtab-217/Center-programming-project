@@ -1,5 +1,8 @@
 <?php
 
+use App\Livewire\Student\ListStudents;
+use App\Livewire\Teacher\ListTeachers;
+use App\Livewire\Users\ListUsers;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -20,6 +23,11 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::get('/calendar', function(){
     return view('livewire.calendar');
+});
+Route::middleware(['auth'])->group(function () {
+    Route::get("/manage-users", ListUsers::class)->name("users.index");
+    Route::get("/manage-students", ListStudents::class)->name("students.index");
+    Route::get("/manage-teachers", ListTeachers::class)->name("teachers.index");
 });
 
 require __DIR__.'/auth.php';

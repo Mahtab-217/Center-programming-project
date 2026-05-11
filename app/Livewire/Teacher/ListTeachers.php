@@ -8,6 +8,7 @@ use Filament\Actions\Concerns\InteractsWithActions;
 use Filament\Actions\Contracts\HasActions;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
 use Filament\Schemas\Contracts\HasSchemas;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
 use Filament\Tables\Table;
@@ -28,6 +29,10 @@ class ListTeachers extends Component implements HasActions, HasSchemas, HasTable
             ->query(fn (): Builder => Teacher::query())
             ->columns([
                 //
+                TextColumn::make('name'),
+                TextColumn::make('bio'),
+                TextColumn::make('phone_number'),
+                TextColumn::make('degree_of_education'),
             ])
             ->filters([
                 //
